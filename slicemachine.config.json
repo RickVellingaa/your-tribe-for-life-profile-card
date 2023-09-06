@@ -1,6 +1,6 @@
 {
-  "repositoryName": "profile-card-rick",
-  "adapter": "@slicemachine/adapter-sveltekit",
-  "libraries": ["./src/lib/slices"],
-  "localSliceSimulatorURL": "http://localhost:5173/slice-simulator"
+	"repositoryName": "visitekaartje-rick-svelte",
+	"adapter": "@slicemachine/adapter-sveltekit",
+	"libraries": ["./src/lib/slices"],
+	"localSliceSimulatorURL": "http://localhost:5173/slice-simulator"
 }

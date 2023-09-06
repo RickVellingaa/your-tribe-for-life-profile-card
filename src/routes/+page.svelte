@@ -1,11 +1,16 @@
 <script>
-	export let data;
-    console.log();
+    import { SliceZone } from '@prismicio/svelte'
+    import { components } from '$lib/slices' 
+    
+    export let data
 </script>
 
-<pre>
-    {JSON.stringify(data,null,2)}
-</pre>
+<h1>{ data.title }</h1>
+<p>{ data.content[0].text }</p>
+<img src="{data.image.url}" alt="">
 
-<h1>{data.page.data.title[0].text}</h1>
-<p>{data.page.data.slices[0].primary.over[0].text}</p>
+<!-- <pre>
+    {JSON.stringify(data,null,2)}
+</pre> -->
+
+<SliceZone slices={data.slices} {components} />
