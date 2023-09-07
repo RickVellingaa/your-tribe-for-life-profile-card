@@ -1,0 +1,43 @@
+{
+  "id": "socials",
+  "type": "SharedSlice",
+  "name": "Socials",
+  "description": "Socials",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "linkedin": {
+          "type": "Link",
+          "config": {
+            "label": "linkedin",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "twitter": {
+          "type": "Link",
+          "config": {
+            "label": "twitter",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "instagram": {
+          "type": "Link",
+          "config": {
+            "label": "instagram",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

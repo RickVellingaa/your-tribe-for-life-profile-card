@@ -4,6 +4,8 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type HomepageDocumentDataSlicesSlice = SocialsSlice | HobbiesSlice;
+
 /**
  * Content for homepage documents
  */
@@ -31,6 +33,17 @@ interface HomepageDocumentData {
 	title: prismic.KeyTextField;
 
 	/**
+	 * beroep field in *homepage*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: homepage.beroep
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	beroep: prismic.TitleField;
+
+	/**
 	 * content field in *homepage*
 	 *
 	 * - **Field Type**: Rich Text
@@ -40,6 +53,17 @@ interface HomepageDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	content: prismic.RichTextField;
+
+	/**
+	 * Slice Zone field in *homepage*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: homepage.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#slices
+	 */
+	slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice>;
 }
 
 /**
@@ -59,6 +83,140 @@ export type HomepageDocument<Lang extends string = string> = prismic.PrismicDocu
 
 export type AllDocumentTypes = HomepageDocument;
 
+/**
+ * Primary content in *Hobbies → Primary*
+ */
+export interface HobbiesSliceDefaultPrimary {
+	/**
+	 * hobby field in *Hobbies → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hobbies.primary.hobby1
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	hobby1: prismic.RichTextField;
+
+	/**
+	 * hobby field in *Hobbies → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hobbies.primary.hobby2
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	hobby2: prismic.RichTextField;
+
+	/**
+	 * hobby field in *Hobbies → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hobbies.primary.hobby3
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	hobby3: prismic.RichTextField;
+
+	/**
+	 * hobby field in *Hobbies → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hobbies.primary.hobby4
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	hobby4: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Hobbies Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HobbiesSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<HobbiesSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Hobbies*
+ */
+type HobbiesSliceVariation = HobbiesSliceDefault;
+
+/**
+ * Hobbies Shared Slice
+ *
+ * - **API ID**: `hobbies`
+ * - **Description**: Hobbies
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HobbiesSlice = prismic.SharedSlice<'hobbies', HobbiesSliceVariation>;
+
+/**
+ * Primary content in *Socials → Primary*
+ */
+export interface SocialsSliceDefaultPrimary {
+	/**
+	 * linkedin field in *Socials → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: socials.primary.linkedin
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	linkedin: prismic.LinkField;
+
+	/**
+	 * twitter field in *Socials → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: socials.primary.twitter
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	twitter: prismic.LinkField;
+
+	/**
+	 * instagram field in *Socials → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: socials.primary.instagram
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	instagram: prismic.LinkField;
+}
+
+/**
+ * Default variation for Socials Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialsSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<SocialsSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Socials*
+ */
+type SocialsSliceVariation = SocialsSliceDefault;
+
+/**
+ * Socials Shared Slice
+ *
+ * - **API ID**: `socials`
+ * - **Description**: Socials
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialsSlice = prismic.SharedSlice<'socials', SocialsSliceVariation>;
+
 declare module '@prismicio/client' {
 	interface CreateClient {
 		(
@@ -68,6 +226,19 @@ declare module '@prismicio/client' {
 	}
 
 	namespace Content {
-		export type { HomepageDocument, HomepageDocumentData, AllDocumentTypes };
+		export type {
+			HomepageDocument,
+			HomepageDocumentData,
+			HomepageDocumentDataSlicesSlice,
+			AllDocumentTypes,
+			HobbiesSlice,
+			HobbiesSliceDefaultPrimary,
+			HobbiesSliceVariation,
+			HobbiesSliceDefault,
+			SocialsSlice,
+			SocialsSliceDefaultPrimary,
+			SocialsSliceVariation,
+			SocialsSliceDefault
+		};
 	}
 }

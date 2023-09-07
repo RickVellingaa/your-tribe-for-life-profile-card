@@ -1,0 +1,53 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"hobby1": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Proident duis quis id consequat labore excepteur mollit. Lorem veniam Lorem nisi veniam culpa duis cupidatat sint labore non veniam reprehenderit proident veniam. Culpa mollit dolor amet commodo officia elit id exercitation enim aliqua nulla laboris pariatur anim excepteur."
+						}
+					}
+				]
+			},
+			"hobby2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit adipisicing minim ipsum cupidatat irure. Elit eiusmod duis incididunt incididunt deserunt eu consectetur culpa elit amet."
+						}
+					}
+				]
+			},
+			"hobby3": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Officia non occaecat culpa anim enim in reprehenderit nisi eiusmod quis."
+						}
+					}
+				]
+			},
+			"hobby4": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Irure eu elit nisi dolore."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

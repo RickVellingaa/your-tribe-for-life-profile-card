@@ -1,0 +1,137 @@
+:root {
+    --gradient-top: #09203F;
+    --gradient-btm: #537895;
+    --white-clr: #fff;
+    --black-clr: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Kelson Sans, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    height: 80vh;
+    width: 27.5vw;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.profile-card:hover .content {
+    transform: rotateY(180deg);
+    transition: transform 1s;
+}
+
+.front,
+.back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    color: #03446A;
+    text-align: center;
+    backface-visibility: hidden;
+    background: rgb(9, 32, 63);
+    background: linear-gradient(180deg, rgba(9, 32, 63, 1) 0%, rgba(83, 120, 149, 1) 100%);
+    color: var(--white-clr);
+}
+
+.front article {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.discordapp.com/attachments/1106581080162701323/1149369093993021440/mugshot_rick.png');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 75%;
+}
+
+.back article {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-content {
+    width: 100%;
+    height: 35vh;
+    background: white;
+}
+
+.text-header {
+    width: 100%;
+    padding: 1em;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.front .my-image, .front .socials, .front .text-content {
+    visibility: hidden;
+    background: transparent;
+}
+
+.text-header img {
+    margin-top: 1em;
+    width: 10vw;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.text-content {
+    color: var(--black-clr);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.text-content p {
+    margin-left: 16px;
+    line-height: 1.5em;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.75em;
+    margin: 16px;
+    margin-top: 1em;
+}
