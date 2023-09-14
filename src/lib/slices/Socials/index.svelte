@@ -3,9 +3,9 @@
 </script>
 
 <ul>
-	<li><a href="{slice.primary.linkedin.url}"><iconify-icon icon="mdi:linkedin"></iconify-icon></a></li>
-	<li><a href="{slice.primary.twitter.url}"><iconify-icon icon="mdi:instagram"></iconify-icon></a></li>
-	<li><a href="{slice.primary.instagram.url}"><iconify-icon icon="mdi:twitter"></iconify-icon></a></li>
+	<li><a aria-label="linkedin link" href="{slice.primary.linkedin.url}"><iconify-icon icon="mdi:linkedin"></iconify-icon></a></li>
+	<li><a aria-label="instagram link" href="{slice.primary.twitter.url}"><iconify-icon icon="mdi:instagram"></iconify-icon></a></li>
+	<li><a aria-label="twitter link" href="{slice.primary.instagram.url}"><iconify-icon icon="mdi:twitter"></iconify-icon></a></li>
 </ul>
 
 <style>
